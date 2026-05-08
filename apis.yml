@@ -1,0 +1,29 @@
+aid: steam
+url: https://raw.githubusercontent.com/api-evangelist/steam/refs/heads/main/apis.yml
+name: Steam
+x-type: company
+description: >-
+  Steam is Valve's PC gaming platform and digital distribution storefront. The Steamworks Web API exposes user, friend, item, achievement, and economy endpoints for game developers and community tools.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Gaming
+  - Valve
+  - Distribution
+  - Steamworks
+  - Marketplace
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://store.steampowered.com/
+  - type: Plans
+    url: plans/steam-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/steam-rate-limits.yml
+  - type: FinOps
+    url: finops/steam-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
