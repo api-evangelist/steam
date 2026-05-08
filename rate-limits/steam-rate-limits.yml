@@ -5,32 +5,75 @@ provider: Steam
 providerId: steam
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
-- Gaming
-- Valve
-- Distribution
-- Steamworks
-- Marketplace
-- Rate Limiting
-- Quotas
-- Throttling
-description: Placeholder rate-limit artifact for Steam. Replace with real limits once the pipeline
-  researches the provider's rate-limit documentation.
-notes: Initial scaffold — limits have not yet been reconciled against the provider's documentation.
+  - Gaming
+  - Valve
+  - Steamworks
+  - Rate Limiting
+  - Quotas
+  - Throttling
+description: >-
+  Valve does not publish a precise per-second cap on Steam Web API calls in the public Steamworks docs. The widely documented behavior, confirmed by the Steam Web API Terms of Use, is a soft daily quota of approximately 100,000 calls per Web API key, and a per-IP burst limit that returns HTTP 429 (or HTTP 403 for repeated abuse) once exceeded. Some interfaces (ISteamUser/GetPlayerSummaries) accept up to 100 SteamIDs per request — clients should batch to reduce call volume. The unofficial Storefront API (store.steampowered.com/api/) is more aggressively rate-limited and returns 429 well below the Web API quota. Partner microtransaction interfaces are not subject to the same key-level quota; per the Steamworks documentation they are governed by the per-product Steamworks agreement.
+notes: >-
+  Limits below are commonly observed and consistent with Valve's published Web API Terms; exact thresholds may shift without notice. Always inspect HTTP status and back off on 429/403. For Storefront API consumers, target sustained <1 request/second.
 sources:
-- https://store.steampowered.com/
+  - https://steamcommunity.com/dev/apiterms
+  - https://partner.steamgames.com/doc/webapi
+  - https://steamcommunity.com/dev
 responseCodes:
   throttled: 429
+  forbidden: 403
+  unauthorized: 401
 limits:
-- name: Default
-  scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  - name: Steam Web API Daily Quota
+    scope: api-key
+    metric: calls
+    limit: 100000
+    timeFrame: day
+    notes: >-
+      Soft daily quota per Web API key as referenced by community documentation and Valve's Web API Terms. Excessive use can result in temporary 429 or 403 responses.
+  - name: Steam Web API Burst (per IP)
+    scope: ip
+    metric: requests-per-second
+    limit: -1
+    timeFrame: second
+    notes: >-
+      Undocumented per-IP burst limit. Sustained high concurrency from a single IP returns 429.
+  - name: Storefront API
+    scope: ip
+    metric: requests-per-second
+    limit: 1
+    timeFrame: second
+    notes: >-
+      Unofficial https://store.steampowered.com/api/* endpoints — common safe ceiling is approximately 1 request/second from a single IP; exceeding triggers 429 quickly.
+  - name: GetPlayerSummaries Batch Size
+    scope: request
+    metric: steamids
+    limit: 100
+    timeFrame: per-request
+    notes: >-
+      ISteamUser/GetPlayerSummaries v0002 accepts up to 100 SteamIDs per call — batch lookups to reduce request volume.
+  - name: Web API Key Quantity
+    scope: account
+    metric: api-keys
+    limit: 1
+    timeFrame: simultaneous
+    notes: >-
+      Each Steam account can hold one active Web API key; key rotation invalidates the previous key.
 policies:
-- name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  - name: Backoff Strategy
+    description: >-
+      Implement exponential backoff with jitter on 429 / 403 responses; throttle to well below observed throughput before retrying.
+  - name: Batch and Cache
+    description: >-
+      Batch Steam ID lookups (up to 100 per request); cache catalog/news/schema responses for hours/days as Valve data changes infrequently.
+  - name: Use Web API not Storefront
+    description: >-
+      Where the same data is available via Web API and Storefront, prefer the Web API — it has a more permissive quota and is supported.
+  - name: Respect Terms of Use
+    description: >-
+      The Steam Web API Terms of Use prohibit reselling Web API data and require attribution. Long-term commercial scraping of the Storefront API risks key revocation.
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -3,7 +3,7 @@ url: https://raw.githubusercontent.com/api-evangelist/steam/refs/heads/main/apis
 name: Steam
 x-type: company
 description: >-
-  Steam is Valve's PC gaming platform and digital distribution storefront. The Steamworks Web API exposes user, friend, item, achievement, and economy endpoints for game developers and community tools.
+  Steam is Valve's PC gaming platform and digital distribution storefront. Valve exposes the Steamworks Web API at https://api.steampowered.com/ — a constellation of HTTP interfaces for games, players, friends, achievements, items, the economy, leaderboards, remote storage, and the Steam Workshop. A subset of read-only interfaces are public (with a Steam Web API key); the full Steamworks set requires a publisher account and partner-restricted methods. There is no per-call fee for the Steamworks Web API itself; Valve monetizes through a $100 Steam Direct submission fee per product and a revenue share on store sales.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Gaming
@@ -11,13 +11,286 @@ tags:
   - Distribution
   - Steamworks
   - Marketplace
+  - Web API
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: steam:steam-news-api
+    name: ISteamNews
+    tags:
+      - News
+      - Feeds
+      - Public
+    properties:
+      - url: https://steamcommunity.com/dev
+        type: Documentation
+      - url: https://partner.steamgames.com/doc/webapi
+        type: API Reference
+    description: >-
+      ISteamNews exposes per-game news feeds via GetNewsForApp. Path pattern http://api.steampowered.com/ISteamNews/<method>/v<version>/.
+  - aid: steam:steam-user-stats-api
+    name: ISteamUserStats
+    tags:
+      - Stats
+      - Achievements
+      - Global Stats
+      - Schema
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/ISteamUserStats
+        type: API Reference
+    description: >-
+      ISteamUserStats provides global achievement percentages, schema for game stats and achievements, and per-user achievement / stats retrieval (GetGlobalAchievementPercentagesForApp, GetSchemaForGame, GetUserStatsForGame, GetPlayerAchievements, etc.).
+  - aid: steam:steam-user-api
+    name: ISteamUser
+    tags:
+      - Users
+      - Profiles
+      - Friends
+      - Bans
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/ISteamUser
+        type: API Reference
+    description: >-
+      ISteamUser exposes player profile, friend list, and ban-status endpoints (GetPlayerSummaries, GetFriendList, GetPlayerBans, ResolveVanityURL).
+  - aid: steam:steam-user-auth-api
+    name: ISteamUserAuth
+    tags:
+      - Authentication
+      - Sessions
+      - Tickets
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/ISteamUserAuth
+        type: API Reference
+    description: >-
+      ISteamUserAuth issues and validates Steam session tickets (AuthenticateUserTicket, AuthenticateUser) used by partner servers to verify a connecting player's Steam identity.
+  - aid: steam:steam-apps-api
+    name: ISteamApps
+    tags:
+      - Apps
+      - Catalog
+      - Servers
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/ISteamApps
+        type: API Reference
+    description: >-
+      ISteamApps exposes catalog and server queries (GetAppList, GetServersAtAddress, UpToDateCheck) used to enumerate Steam applications and validate version state.
+  - aid: steam:steam-community-api
+    name: ISteamCommunity
+    tags:
+      - Community
+      - Reports
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/ISteamCommunity
+        type: API Reference
+    description: >-
+      ISteamCommunity provides restricted access to Steam Community features (e.g., ReportAbuse) for trusted partners.
+  - aid: steam:steam-economy-api
+    name: ISteamEconomy
+    tags:
+      - Economy
+      - Trades
+      - Asset Class
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/ISteamEconomy
+        type: API Reference
+    description: >-
+      ISteamEconomy is a secondary economy-system interface (GetAssetClassInfo, GetAssetPrices, FinalizeAssetTransaction) used to look up asset metadata and pricing for in-game items.
+  - aid: steam:steam-game-inventory-api
+    name: IGameInventory
+    tags:
+      - Inventory
+      - Items
+      - Economy
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/IGameInventory
+        type: API Reference
+    description: >-
+      IGameInventory is the primary inventory-economy interface used by partner servers to manipulate item ownership (AddItem, ConsumeItem, GetUserInventory, GetItemDefArchive).
+  - aid: steam:steam-inventory-service-api
+    name: IInventoryService
+    tags:
+      - Inventory
+      - Items
+      - Service
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/IInventoryService
+        type: API Reference
+    description: >-
+      IInventoryService is the modern Steam Inventory Service interface used to add/remove/exchange items, manage definitions, and query inventories at scale.
+  - aid: steam:steam-game-server-api
+    name: ISteamGameServer
+    tags:
+      - Game Servers
+      - Sessions
+      - Login Tokens
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/ISteamGameServer
+        type: API Reference
+    description: >-
+      ISteamGameServer issues and manages persistent Game Server Login Tokens (GSLTs) used by dedicated game servers to authenticate to Steam.
+  - aid: steam:steam-remote-storage-api
+    name: ISteamRemoteStorage
+    tags:
+      - Remote Storage
+      - Cloud Saves
+      - UGC
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/ISteamRemoteStorage
+        type: API Reference
+    description: >-
+      ISteamRemoteStorage exposes Steam Cloud and UGC (user-generated content) storage endpoints — fetching files, retrieving UGC details, and listing published files.
+  - aid: steam:steam-leaderboards-api
+    name: ISteamLeaderboards
+    tags:
+      - Leaderboards
+      - Scores
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/ISteamLeaderboards
+        type: API Reference
+    description: >-
+      ISteamLeaderboards manages per-app leaderboards — creation, score upload/reset, and entry retrieval.
+  - aid: steam:steam-player-service-api
+    name: IPlayerService
+    tags:
+      - Players
+      - Owned Games
+      - Recently Played
+      - Badges
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/IPlayerService
+        type: API Reference
+    description: >-
+      IPlayerService exposes player-centric endpoints (GetOwnedGames, GetRecentlyPlayedGames, GetSteamLevel, GetBadges, IsPlayingSharedGame).
+  - aid: steam:steam-game-notifications-api
+    name: IGameNotificationsService
+    tags:
+      - Notifications
+      - In-Game
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/IGameNotificationsService
+        type: API Reference
+    description: >-
+      IGameNotificationsService delivers turn-based and prompt-style in-game notifications to players (UpdateNotificationSettings, UserCreateSession).
+  - aid: steam:steam-webapi-util-api
+    name: ISteamWebAPIUtil
+    tags:
+      - Utility
+      - Server Info
+      - Schema
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/ISteamWebAPIUtil
+        type: API Reference
+    description: >-
+      ISteamWebAPIUtil provides helper endpoints — GetServerInfo (Steam server time/version) and GetSupportedAPIList (interfaces and methods callable by the API key).
+  - aid: steam:steam-publishedfile-api
+    name: IPublishedFileService
+    tags:
+      - Workshop
+      - UGC
+      - Published Files
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/IPublishedFileService
+        type: API Reference
+    description: >-
+      IPublishedFileService manages Steam Workshop / UGC published files — query, vote, change visibility, manage tags and previews.
+  - aid: steam:steam-broadcast-api
+    name: IBroadcastService
+    tags:
+      - Broadcast
+      - Streaming
+      - Game Live
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/IBroadcastService
+        type: API Reference
+    description: >-
+      IBroadcastService exposes Steam game-broadcast metadata and stream-discovery endpoints used for in-app broadcast lookups.
+  - aid: steam:steam-storefront-api
+    name: Steam Store API
+    tags:
+      - Store
+      - Pricing
+      - App Details
+    properties:
+      - url: https://store.steampowered.com/api/appdetails
+        type: API Reference
+    description: >-
+      An unofficial-but-widely-used set of storefront endpoints (https://store.steampowered.com/api/) returns app details, package details, currency conversion, and feature lists. Used by community sites and third-party catalogs.
+  - aid: steam:steam-checkout-api
+    name: ISteamCheckout
+    tags:
+      - Checkout
+      - In-Game Purchases
+      - Microtransactions
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/ISteamCheckout
+        type: API Reference
+    description: >-
+      ISteamCheckout is the partner-only interface used to initiate, authorize, and finalize in-game microtransaction purchases through Steam Checkout.
+  - aid: steam:steam-microtxn-api
+    name: ISteamMicroTxn
+    tags:
+      - Microtransactions
+      - Payments
+      - Refunds
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/ISteamMicroTxn
+        type: API Reference
+    description: >-
+      ISteamMicroTxn / ISteamMicroTxnSandbox handle the full microtransaction lifecycle — InitTxn, FinalizeTxn, GetReport, RefundTxn, QueryTxn — used by F2P and live-service titles.
+  - aid: steam:steam-deeplinkservice-api
+    name: ISteamDeepLinkService
+    tags:
+      - Deep Links
+      - Marketing
+    properties:
+      - url: https://partner.steamgames.com/doc/webapi/ISteamDeepLinkService
+        type: API Reference
+    description: >-
+      ISteamDeepLinkService creates and resolves time-limited deep links into the Steam client and store, useful for marketing campaigns and partner referrals.
 common:
   - type: Website
     url: https://store.steampowered.com/
+  - type: Documentation
+    url: https://partner.steamgames.com/doc/home
+  - type: API Reference
+    url: https://partner.steamgames.com/doc/webapi
+  - type: Public Web API Docs
+    url: https://steamcommunity.com/dev
+  - type: Getting Started
+    url: https://partner.steamgames.com/doc/gettingstarted
+  - type: API Key Registration
+    url: https://steamcommunity.com/dev/apikey
+  - type: Steam Direct
+    url: https://partner.steamgames.com/steamdirect
+  - type: Steamworks SDK
+    url: https://partner.steamgames.com/doc/sdk
+  - type: Steam Workshop Docs
+    url: https://partner.steamgames.com/doc/features/workshop
+  - type: Sign Up
+    url: https://partner.steamgames.com/
+  - type: Login
+    url: https://store.steampowered.com/login/
+  - type: Status
+    url: https://steamstat.us/
+  - type: Status (Official)
+    url: https://store.steampowered.com/stats/
+  - type: Steam Store
+    url: https://store.steampowered.com/
+  - type: Steam Community
+    url: https://steamcommunity.com/
+  - type: Steamworks Discord
+    url: https://discord.gg/steamworks
+  - type: Steamworks Documentation
+    url: https://partner.steamgames.com/doc
+  - type: Privacy Policy
+    url: https://store.steampowered.com/privacy_agreement/
+  - type: Subscriber Agreement
+    url: https://store.steampowered.com/subscriber_agreement/
+  - type: Steam Web API Terms of Use
+    url: https://steamcommunity.com/dev/apiterms
+  - type: Steamworks Forum
+    url: https://steamcommunity.com/groups/steamworks
   - type: Plans
     url: plans/steam-plans-pricing.yml
   - type: RateLimits
