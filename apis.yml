@@ -249,6 +249,10 @@ apis:
     description: >-
       ISteamDeepLinkService creates and resolves time-limited deep links into the Steam client and store, useful for marketing campaigns and partner referrals.
 common:
+  - type: GitHubOrganization
+    url: https://github.com/valvesoftware
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/valvesoftware
   - type: Website
     url: https://store.steampowered.com/
   - type: Documentation
