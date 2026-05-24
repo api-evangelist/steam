@@ -1,0 +1,209 @@
+openapi: 3.1.0
+info:
+  title: Steamworks Web API
+  version: "1.0.0"
+  description: |
+    Valve's Steamworks Web API exposes a constellation of HTTP interfaces for
+    games, players, news, friends, achievements, and items. Public read-only
+    interfaces (with a Steam Web API key) are served from api.steampowered.com;
+    publisher-restricted methods are served from partner.steam-api.com.
+    Endpoints derived from https://steamcommunity.com/dev and the Steamworks
+    documentation at https://partner.steamgames.com/doc/webapi.
+  contact:
+    name: Steamworks Developer Portal
+    url: https://partner.steamgames.com/doc/webapi
+servers:
+  - url: https://api.steampowered.com
+    description: Public Steam Web API
+  - url: https://partner.steam-api.com
+    description: Publisher-only Steam Web API
+security:
+  - ApiKey: []
+components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: query
+      name: key
+      description: Steam Web API key. Obtain at https://steamcommunity.com/dev/apikey.
+paths:
+  /ISteamNews/GetNewsForApp/v2/:
+    get:
+      summary: Get news items for a Steam application
+      parameters:
+        - in: query
+          name: appid
+          required: true
+          schema: { type: integer }
+        - in: query
+          name: count
+          schema: { type: integer, default: 20 }
+        - in: query
+          name: maxlength
+          schema: { type: integer }
+        - in: query
+          name: enddate
+          schema: { type: integer }
+        - in: query
+          name: feeds
+          schema: { type: string }
+        - in: query
+          name: format
+          schema: { type: string, enum: [json, xml, vdf], default: json }
+      responses:
+        "200":
+          description: News items
+  /ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/:
+    get:
+      summary: Get global achievement percentages for an application
+      parameters:
+        - in: query
+          name: gameid
+          required: true
+          schema: { type: integer }
+        - in: query
+          name: format
+          schema: { type: string, enum: [json, xml, vdf], default: json }
+      responses:
+        "200":
+          description: Achievement percentages
+  /ISteamUserStats/GetGlobalStatsForGame/v1/:
+    get:
+      summary: Get global stats for a game
+      parameters:
+        - in: query
+          name: appid
+          required: true
+          schema: { type: integer }
+        - in: query
+          name: count
+          required: true
+          schema: { type: integer }
+        - in: query
+          name: "name[0]"
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Global stats
+  /ISteamUserStats/GetNumberOfCurrentPlayers/v1/:
+    get:
+      summary: Get current concurrent player count for an application
+      parameters:
+        - in: query
+          name: appid
+          required: true
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Player count
+  /ISteamUser/GetPlayerSummaries/v2/:
+    get:
+      summary: Get profile summaries for a list of Steam users
+      security:
+        - ApiKey: []
+      parameters:
+        - in: query
+          name: steamids
+          required: true
+          schema: { type: string }
+          description: Comma-separated list of 64-bit Steam IDs.
+      responses:
+        "200":
+          description: Player summaries
+  /ISteamUser/GetFriendList/v1/:
+    get:
+      summary: Get the friend list for a Steam user
+      security:
+        - ApiKey: []
+      parameters:
+        - in: query
+          name: steamid
+          required: true
+          schema: { type: string }
+        - in: query
+          name: relationship
+          schema: { type: string, enum: [all, friend], default: all }
+      responses:
+        "200":
+          description: Friend list
+  /ISteamUser/GetPlayerBans/v1/:
+    get:
+      summary: Get VAC / community ban information for a list of Steam users
+      security:
+        - ApiKey: []
+      parameters:
+        - in: query
+          name: steamids
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Player ban information
+  /ISteamUser/ResolveVanityURL/v1/:
+    get:
+      summary: Resolve a Steam vanity URL into a 64-bit Steam ID
+      security:
+        - ApiKey: []
+      parameters:
+        - in: query
+          name: vanityurl
+          required: true
+          schema: { type: string }
+        - in: query
+          name: url_type
+          schema: { type: integer, enum: [1, 2, 3], default: 1 }
+      responses:
+        "200":
+          description: Resolved Steam ID
+  /IPlayerService/GetOwnedGames/v1/:
+    get:
+      summary: Get the list of games owned by a Steam user
+      security:
+        - ApiKey: []
+      parameters:
+        - in: query
+          name: steamid
+          required: true
+          schema: { type: string }
+        - in: query
+          name: include_appinfo
+          schema: { type: boolean, default: false }
+        - in: query
+          name: include_played_free_games
+          schema: { type: boolean, default: false }
+        - in: query
+          name: format
+          schema: { type: string, enum: [json, xml, vdf], default: json }
+      responses:
+        "200":
+          description: Owned games
+  /IPlayerService/GetRecentlyPlayedGames/v1/:
+    get:
+      summary: Get recently played games for a Steam user
+      security:
+        - ApiKey: []
+      parameters:
+        - in: query
+          name: steamid
+          required: true
+          schema: { type: string }
+        - in: query
+          name: count
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Recently played games
+  /IPlayerService/GetSteamLevel/v1/:
+    get:
+      summary: Get the Steam level for a Steam user
+      security:
+        - ApiKey: []
+      parameters:
+        - in: query
+          name: steamid
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Steam level
