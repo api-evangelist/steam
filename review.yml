@@ -1,0 +1,112 @@
+provider: Steam
+providerId: steam
+reviewer: API Evangelist
+reviewedBy: Kin Lane
+date: '2026-05-29'
+topic: streaming-surface
+question: >-
+  Does Steam expose a documented public streaming surface (Server-Sent Events,
+  WebSockets, gRPC streaming, Webhooks, or any push-based event delivery)?
+finding: none-public
+summary: >-
+  Steam (Valve) does NOT expose a documented public streaming API surface. The
+  Steamworks Web API at https://api.steampowered.com/ is REST-only — every
+  documented interface (ISteamNews, ISteamUser, ISteamUserStats, ISteamApps,
+  IPlayerService, IInventoryService, IPublishedFileService, ISteamMicroTxn,
+  IBroadcastService, etc.) is request/response over HTTP GET/POST returning
+  JSON, XML, or VDF. There is no public SSE endpoint, no WebSocket gateway, no
+  gRPC streaming surface, and no general-purpose webhook system in the
+  Steamworks Web API documentation. Real-time, push, and event semantics are
+  delivered exclusively through the proprietary, native Steamworks SDK
+  (steam_api64 / ISteamFriends / ISteamMatchmaking / callbacks / call results)
+  which links into game clients and dedicated servers — not via the public Web
+  API. The Inventory Service and Workshop surfaces have narrow, partner-only
+  callback hooks (Steam Inventory Service item-grant notifications, Workshop
+  IPN-style notifications for some submission and microtransaction events) but
+  these are not a general streaming or eventing platform and are configured in
+  the Steamworks partner backend, not via public self-service.
+restPolling:
+  baseURL: https://api.steampowered.com/
+  pattern: /<Interface>/<Method>/v<Version>/
+  transport: HTTP GET / POST
+  formats:
+    - JSON
+    - XML
+    - VDF
+  auth: Steam Web API key (steamcommunity.com/dev/apikey) + partner publisher key for restricted methods
+  notes: >-
+    All change detection (player presence, achievements, prices, ownership,
+    workshop updates, leaderboard scores) requires consumer-side polling.
+streamingChannels:
+  serverSentEvents: false
+  webSockets: false
+  grpcStreaming: false
+  graphqlSubscriptions: false
+  mqtt: false
+  amqp: false
+  kafkaTopics: false
+  publicWebhooks: false
+webhookLikeSurfaces:
+  - name: Steam Inventory Service item notifications
+    type: partner-callback
+    public: false
+    description: >-
+      The Steam Inventory Service (IInventoryService) supports partner-server
+      callbacks for item grants and exchange events when configured via the
+      Steamworks partner site. Not a public webhook subscription API and not
+      self-service.
+    docs: https://partner.steamgames.com/doc/features/inventory
+  - name: Steam Workshop / UGC submission notifications
+    type: partner-callback
+    public: false
+    description: >-
+      Workshop integrations can receive IPN-style notifications for certain
+      submission, subscription, and payment-share events on titles that have
+      enabled paid Workshop content. Provisioned per-app by Valve, not exposed
+      as a general webhook subscription endpoint.
+    docs: https://partner.steamgames.com/doc/features/workshop
+  - name: ISteamMicroTxn IPN / FinalizeTxn callbacks
+    type: partner-callback
+    public: false
+    description: >-
+      Microtransaction lifecycle (InitTxn / FinalizeTxn / RefundTxn) is
+      partner-server-to-Steam request/response; refund and chargeback
+      notifications are delivered to a partner-configured callback URL through
+      the Steamworks backend, not as a public webhook product.
+    docs: https://partner.steamgames.com/doc/webapi/ISteamMicroTxn
+nativeSdkRealTime:
+  product: Steamworks SDK
+  public: false
+  license: Proprietary (Steamworks SDK Access Agreement)
+  mechanism: >-
+    The native Steamworks SDK (C/C++ headers and steam_api64 binary) delivers
+    real-time events to game clients via the SteamAPI_RunCallbacks() loop —
+    presence, lobby/matchmaking, friends, P2P networking, Remote Play,
+    overlay, and voice. This is the actual "streaming" surface inside the
+    Steam ecosystem, but it is in-process, partner-licensed, and not a public
+    network API.
+  docs: https://partner.steamgames.com/doc/sdk
+gameBroadcastNote: >-
+  IBroadcastService and the Steam Broadcasting product (steam.tv era and the
+  in-client broadcast viewer) expose metadata about live game broadcasts but
+  do not provide a public media/event stream for third-party consumers — the
+  HLS/DASH endpoints that back the player are internal to the Steam client
+  and Community site and are not documented as a public streaming API.
+conclusion: >-
+  Steam has no documented public streaming surface. Integrations must poll
+  the Steamworks Web API on a schedule for change detection, or link the
+  proprietary Steamworks SDK into a native client to receive real-time
+  callbacks. The few push-style hooks that do exist (Inventory Service item
+  notifications, Workshop submission notifications, ISteamMicroTxn IPN) are
+  partner-only, per-app, configured in the Steamworks backend, and are not a
+  general public webhook product.
+links:
+  webApiDocs: https://partner.steamgames.com/doc/webapi
+  publicWebApiDocs: https://steamcommunity.com/dev
+  apiKeySignup: https://steamcommunity.com/dev/apikey
+  inventoryService: https://partner.steamgames.com/doc/features/inventory
+  workshop: https://partner.steamgames.com/doc/features/workshop
+  microtxn: https://partner.steamgames.com/doc/webapi/ISteamMicroTxn
+  broadcastService: https://partner.steamgames.com/doc/webapi/IBroadcastService
+  sdk: https://partner.steamgames.com/doc/sdk
+  terms: https://steamcommunity.com/dev/apiterms
