@@ -1,0 +1,1125 @@
+{
+  "item": [
+    {
+      "id": "9227b984-5c1b-48cc-94b8-9f9867de2559",
+      "name": "Get news items for a Steam application",
+      "request": {
+        "name": "Get news items for a Steam application",
+        "description": {},
+        "url": {
+          "path": [
+            "ISteamNews",
+            "GetNewsForApp",
+            "v2",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "appid",
+              "value": "<integer>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "count",
+              "value": "20"
+            },
+            {
+              "disabled": false,
+              "key": "maxlength",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "enddate",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "feeds",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "format",
+              "value": "json"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "f6c72901-7420-409f-94bc-7cb5c9e408e3",
+          "name": "News items",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ISteamNews",
+                "GetNewsForApp",
+                "v2",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "appid",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "count",
+                  "value": "20"
+                },
+                {
+                  "key": "maxlength",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "enddate",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "feeds",
+                  "value": "<string>"
+                },
+                {
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "key": "key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "93be1fad-57a5-4d4b-831d-b53607bf5d5d",
+      "name": "Get global achievement percentages for an application",
+      "request": {
+        "name": "Get global achievement percentages for an application",
+        "description": {},
+        "url": {
+          "path": [
+            "ISteamUserStats",
+            "GetGlobalAchievementPercentagesForApp",
+            "v2",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "gameid",
+              "value": "<integer>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "format",
+              "value": "json"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "4c02c07f-6065-4357-940e-027c55e007f8",
+          "name": "Achievement percentages",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ISteamUserStats",
+                "GetGlobalAchievementPercentagesForApp",
+                "v2",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "gameid",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "key": "key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "83b949b9-8425-4ca2-8a4d-55b9f602f059",
+      "name": "Get global stats for a game",
+      "request": {
+        "name": "Get global stats for a game",
+        "description": {},
+        "url": {
+          "path": [
+            "ISteamUserStats",
+            "GetGlobalStatsForGame",
+            "v1",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "appid",
+              "value": "<integer>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "count",
+              "value": "<integer>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "name[0]",
+              "value": "<string>",
+              "description": "(Required) "
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "3ef8273b-65a6-4387-9ade-c34bf8d27f70",
+          "name": "Global stats",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ISteamUserStats",
+                "GetGlobalStatsForGame",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "appid",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "count",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "name[0]",
+                  "value": "<string>"
+                },
+                {
+                  "key": "key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "3bae2186-67cc-4504-aea3-1d42db53f5f6",
+      "name": "Get current concurrent player count for an application",
+      "request": {
+        "name": "Get current concurrent player count for an application",
+        "description": {},
+        "url": {
+          "path": [
+            "ISteamUserStats",
+            "GetNumberOfCurrentPlayers",
+            "v1",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "appid",
+              "value": "<integer>",
+              "description": "(Required) "
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "0b8625a1-bc71-4c13-acaa-9571c940f2a7",
+          "name": "Player count",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ISteamUserStats",
+                "GetNumberOfCurrentPlayers",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "appid",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "d6ad4bc4-be5a-42aa-88d8-cc6708c7bc41",
+      "name": "Get profile summaries for a list of Steam users",
+      "request": {
+        "name": "Get profile summaries for a list of Steam users",
+        "description": {},
+        "url": {
+          "path": [
+            "ISteamUser",
+            "GetPlayerSummaries",
+            "v2",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "steamids",
+              "value": "<string>",
+              "description": "(Required) Comma-separated list of 64-bit Steam IDs."
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "key"
+            },
+            {
+              "key": "value",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "in",
+              "value": "query"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "22124d24-96c5-4d57-9887-d8fccc6b27cd",
+          "name": "Player summaries",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ISteamUser",
+                "GetPlayerSummaries",
+                "v2",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "steamids",
+                  "value": "<string>"
+                },
+                {
+                  "key": "key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "33decdd3-9e60-4664-b431-d52972474e53",
+      "name": "Get the friend list for a Steam user",
+      "request": {
+        "name": "Get the friend list for a Steam user",
+        "description": {},
+        "url": {
+          "path": [
+            "ISteamUser",
+            "GetFriendList",
+            "v1",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "steamid",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "relationship",
+              "value": "all"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "key"
+            },
+            {
+              "key": "value",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "in",
+              "value": "query"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "e026862b-78fc-48da-a2a6-58dd7d02dcf1",
+          "name": "Friend list",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ISteamUser",
+                "GetFriendList",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "steamid",
+                  "value": "<string>"
+                },
+                {
+                  "key": "relationship",
+                  "value": "all"
+                },
+                {
+                  "key": "key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "8d066897-5f5f-4508-9ba0-c6f2689d1f60",
+      "name": "Get VAC / community ban information for a list of Steam users",
+      "request": {
+        "name": "Get VAC / community ban information for a list of Steam users",
+        "description": {},
+        "url": {
+          "path": [
+            "ISteamUser",
+            "GetPlayerBans",
+            "v1",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "steamids",
+              "value": "<string>",
+              "description": "(Required) "
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "key"
+            },
+            {
+              "key": "value",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "in",
+              "value": "query"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "48934bf4-02c1-4bef-9937-2003a9bf02c2",
+          "name": "Player ban information",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ISteamUser",
+                "GetPlayerBans",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "steamids",
+                  "value": "<string>"
+                },
+                {
+                  "key": "key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "f514a1db-6b56-4409-8feb-967849cef37b",
+      "name": "Resolve a Steam vanity URL into a 64-bit Steam ID",
+      "request": {
+        "name": "Resolve a Steam vanity URL into a 64-bit Steam ID",
+        "description": {},
+        "url": {
+          "path": [
+            "ISteamUser",
+            "ResolveVanityURL",
+            "v1",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "vanityurl",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "url_type",
+              "value": "1"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "key"
+            },
+            {
+              "key": "value",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "in",
+              "value": "query"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "ec7275d7-6213-4a36-9877-ce692d3dbb01",
+          "name": "Resolved Steam ID",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ISteamUser",
+                "ResolveVanityURL",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "vanityurl",
+                  "value": "<string>"
+                },
+                {
+                  "key": "url_type",
+                  "value": "1"
+                },
+                {
+                  "key": "key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "1cdea4cd-0f03-4d8f-88b7-812571e8c0ee",
+      "name": "Get the list of games owned by a Steam user",
+      "request": {
+        "name": "Get the list of games owned by a Steam user",
+        "description": {},
+        "url": {
+          "path": [
+            "IPlayerService",
+            "GetOwnedGames",
+            "v1",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "steamid",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "include_appinfo",
+              "value": "false"
+            },
+            {
+              "disabled": false,
+              "key": "include_played_free_games",
+              "value": "false"
+            },
+            {
+              "disabled": false,
+              "key": "format",
+              "value": "json"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "key"
+            },
+            {
+              "key": "value",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "in",
+              "value": "query"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "2511a664-d5f8-4669-ac06-50a59b5f58e5",
+          "name": "Owned games",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "IPlayerService",
+                "GetOwnedGames",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "steamid",
+                  "value": "<string>"
+                },
+                {
+                  "key": "include_appinfo",
+                  "value": "false"
+                },
+                {
+                  "key": "include_played_free_games",
+                  "value": "false"
+                },
+                {
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "key": "key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "45aa5e1f-15f9-499d-a6cf-08c483de8420",
+      "name": "Get recently played games for a Steam user",
+      "request": {
+        "name": "Get recently played games for a Steam user",
+        "description": {},
+        "url": {
+          "path": [
+            "IPlayerService",
+            "GetRecentlyPlayedGames",
+            "v1",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "steamid",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "count",
+              "value": "<integer>"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "key"
+            },
+            {
+              "key": "value",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "in",
+              "value": "query"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "a6b57beb-fb12-44a6-b830-fc8c5aa5c88c",
+          "name": "Recently played games",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "IPlayerService",
+                "GetRecentlyPlayedGames",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "steamid",
+                  "value": "<string>"
+                },
+                {
+                  "key": "count",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "67efcedc-872a-47fd-b888-ee2664c0b4f6",
+      "name": "Get the Steam level for a Steam user",
+      "request": {
+        "name": "Get the Steam level for a Steam user",
+        "description": {},
+        "url": {
+          "path": [
+            "IPlayerService",
+            "GetSteamLevel",
+            "v1",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "steamid",
+              "value": "<string>",
+              "description": "(Required) "
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "key"
+            },
+            {
+              "key": "value",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "in",
+              "value": "query"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "73ab5fdb-66b7-4e73-96ba-0ccac2febbd7",
+          "name": "Steam level",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "IPlayerService",
+                "GetSteamLevel",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "steamid",
+                  "value": "<string>"
+                },
+                {
+                  "key": "key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.steampowered.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6525516d-0570-483b-be6a-ebb11e3eb717",
+    "name": "Steamworks Web API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Valve's Steamworks Web API exposes a constellation of HTTP interfaces for\ngames, players, news, friends, achievements, and items. Public read-only\ninterfaces (with a Steam Web API key) are served from api.steampowered.com;\npublisher-restricted methods are served from partner.steam-api.com.\nEndpoints derived from https://steamcommunity.com/dev and the Steamworks\ndocumentation at https://partner.steamgames.com/doc/webapi.\n\n\nContact Support:\n Name: Steamworks Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

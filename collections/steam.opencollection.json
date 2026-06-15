@@ -1,0 +1,329 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Steamworks Web API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get news items for a Steam application",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/",
+        "params": [
+          {
+            "name": "appid",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "count",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "maxlength",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "enddate",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "feeds",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "format",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get news items for a Steam application"
+    },
+    {
+      "info": {
+        "name": "Get global achievement percentages for an application",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/",
+        "params": [
+          {
+            "name": "gameid",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "format",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get global achievement percentages for an application"
+    },
+    {
+      "info": {
+        "name": "Get global stats for a game",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.steampowered.com/ISteamUserStats/GetGlobalStatsForGame/v1/",
+        "params": [
+          {
+            "name": "appid",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "count",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "name[0]",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get global stats for a game"
+    },
+    {
+      "info": {
+        "name": "Get current concurrent player count for an application",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/",
+        "params": [
+          {
+            "name": "appid",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get current concurrent player count for an application"
+    },
+    {
+      "info": {
+        "name": "Get profile summaries for a list of Steam users",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/",
+        "params": [
+          {
+            "name": "steamids",
+            "value": "",
+            "type": "query",
+            "description": "Comma-separated list of 64-bit Steam IDs."
+          }
+        ],
+        "auth": {
+          "type": "apikey",
+          "key": "key",
+          "value": "{{key}}",
+          "placement": "query"
+        }
+      },
+      "docs": "Get profile summaries for a list of Steam users"
+    },
+    {
+      "info": {
+        "name": "Get the friend list for a Steam user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.steampowered.com/ISteamUser/GetFriendList/v1/",
+        "params": [
+          {
+            "name": "steamid",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "relationship",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "apikey",
+          "key": "key",
+          "value": "{{key}}",
+          "placement": "query"
+        }
+      },
+      "docs": "Get the friend list for a Steam user"
+    },
+    {
+      "info": {
+        "name": "Get VAC / community ban information for a list of Steam users",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.steampowered.com/ISteamUser/GetPlayerBans/v1/",
+        "params": [
+          {
+            "name": "steamids",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "apikey",
+          "key": "key",
+          "value": "{{key}}",
+          "placement": "query"
+        }
+      },
+      "docs": "Get VAC / community ban information for a list of Steam users"
+    },
+    {
+      "info": {
+        "name": "Resolve a Steam vanity URL into a 64-bit Steam ID",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.steampowered.com/ISteamUser/ResolveVanityURL/v1/",
+        "params": [
+          {
+            "name": "vanityurl",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "url_type",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "apikey",
+          "key": "key",
+          "value": "{{key}}",
+          "placement": "query"
+        }
+      },
+      "docs": "Resolve a Steam vanity URL into a 64-bit Steam ID"
+    },
+    {
+      "info": {
+        "name": "Get the list of games owned by a Steam user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/",
+        "params": [
+          {
+            "name": "steamid",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "include_appinfo",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "include_played_free_games",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "format",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "apikey",
+          "key": "key",
+          "value": "{{key}}",
+          "placement": "query"
+        }
+      },
+      "docs": "Get the list of games owned by a Steam user"
+    },
+    {
+      "info": {
+        "name": "Get recently played games for a Steam user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1/",
+        "params": [
+          {
+            "name": "steamid",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "count",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "apikey",
+          "key": "key",
+          "value": "{{key}}",
+          "placement": "query"
+        }
+      },
+      "docs": "Get recently played games for a Steam user"
+    },
+    {
+      "info": {
+        "name": "Get the Steam level for a Steam user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.steampowered.com/IPlayerService/GetSteamLevel/v1/",
+        "params": [
+          {
+            "name": "steamid",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "apikey",
+          "key": "key",
+          "value": "{{key}}",
+          "placement": "query"
+        }
+      },
+      "docs": "Get the Steam level for a Steam user"
+    }
+  ],
+  "bundled": true
+}
