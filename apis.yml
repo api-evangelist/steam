@@ -4,7 +4,7 @@ name: Steam
 kind: company
 description: >-
   Steam is Valve's PC gaming platform and digital distribution storefront. Valve exposes the Steamworks Web API at https://api.steampowered.com/ — a constellation of HTTP interfaces for games, players, friends, achievements, items, the economy, leaderboards, remote storage, and the Steam Workshop. A subset of read-only interfaces are public (with a Steam Web API key); the full Steamworks set requires a publisher account and partner-restricted methods. There is no per-call fee for the Steamworks Web API itself; Valve monetizes through a $100 Steam Direct submission fee per product and a revenue share on store sales.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Gaming
   - Valve
