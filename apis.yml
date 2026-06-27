@@ -271,7 +271,7 @@ common:
     url: https://partner.steamgames.com/doc/sdk
   - type: Steam Workshop Docs
     url: https://partner.steamgames.com/doc/features/workshop
-  - type: SignUp
+  - type: Signup
     url: https://partner.steamgames.com/
   - type: Login
     url: https://store.steampowered.com/login/
