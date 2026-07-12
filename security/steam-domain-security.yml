@@ -1,0 +1,40 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: store.steampowered.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 17 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 63072000
+- host: api.steampowered.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  4 23:59:59 2026 GMT
+  hsts: null
+- host: partner.steam-api.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Jul 31 23:59:59 2026 GMT
+  hsts: null
+domains:
+- domain: steampowered.com
+  dnssec: false
+  caa:
+  - 0 iodef "mailto:ssl-abuse@valvesoftware.com"
+  - 0 issue "pki.goog"
+  - 0 issue "digicert.com"
+  - 0 issue "letsencrypt.org"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: steam-api.com
+  dnssec: false
+  caa:
+  - 0 iodef "mailto:ssl-abuse@valvesoftware.com"
+  - 0 issue "digicert.com"
+  - 0 issue "letsencrypt.org"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
