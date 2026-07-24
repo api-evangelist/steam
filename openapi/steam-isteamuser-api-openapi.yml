@@ -1,0 +1,119 @@
+openapi: 3.1.0
+info:
+  title: Steamworks Web IPlayerService ISteamUser API
+  version: 1.0.0
+  description: 'Valve''s Steamworks Web API exposes a constellation of HTTP interfaces for
+
+    games, players, news, friends, achievements, and items. Public read-only
+
+    interfaces (with a Steam Web API key) are served from api.steampowered.com;
+
+    publisher-restricted methods are served from partner.steam-api.com.
+
+    Endpoints derived from https://steamcommunity.com/dev and the Steamworks
+
+    documentation at https://partner.steamgames.com/doc/webapi.
+
+    '
+  contact:
+    name: Steamworks Developer Portal
+    url: https://partner.steamgames.com/doc/webapi
+servers:
+- url: https://api.steampowered.com
+  description: Public Steam Web API
+- url: https://partner.steam-api.com
+  description: Publisher-only Steam Web API
+security:
+- ApiKey: []
+tags:
+- name: ISteamUser
+paths:
+  /ISteamUser/GetPlayerSummaries/v2/:
+    get:
+      summary: Get profile summaries for a list of Steam users
+      security:
+      - ApiKey: []
+      parameters:
+      - in: query
+        name: steamids
+        required: true
+        schema:
+          type: string
+        description: Comma-separated list of 64-bit Steam IDs.
+      responses:
+        '200':
+          description: Player summaries
+      tags:
+      - ISteamUser
+  /ISteamUser/GetFriendList/v1/:
+    get:
+      summary: Get the friend list for a Steam user
+      security:
+      - ApiKey: []
+      parameters:
+      - in: query
+        name: steamid
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: relationship
+        schema:
+          type: string
+          enum:
+          - all
+          - friend
+          default: all
+      responses:
+        '200':
+          description: Friend list
+      tags:
+      - ISteamUser
+  /ISteamUser/GetPlayerBans/v1/:
+    get:
+      summary: Get VAC / community ban information for a list of Steam users
+      security:
+      - ApiKey: []
+      parameters:
+      - in: query
+        name: steamids
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Player ban information
+      tags:
+      - ISteamUser
+  /ISteamUser/ResolveVanityURL/v1/:
+    get:
+      summary: Resolve a Steam vanity URL into a 64-bit Steam ID
+      security:
+      - ApiKey: []
+      parameters:
+      - in: query
+        name: vanityurl
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: url_type
+        schema:
+          type: integer
+          enum:
+          - 1
+          - 2
+          - 3
+          default: 1
+      responses:
+        '200':
+          description: Resolved Steam ID
+      tags:
+      - ISteamUser
+components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: query
+      name: key
+      description: Steam Web API key. Obtain at https://steamcommunity.com/dev/apikey.

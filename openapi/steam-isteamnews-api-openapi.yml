@@ -1,0 +1,77 @@
+openapi: 3.1.0
+info:
+  title: Steamworks Web IPlayerService ISteamNews API
+  version: 1.0.0
+  description: 'Valve''s Steamworks Web API exposes a constellation of HTTP interfaces for
+
+    games, players, news, friends, achievements, and items. Public read-only
+
+    interfaces (with a Steam Web API key) are served from api.steampowered.com;
+
+    publisher-restricted methods are served from partner.steam-api.com.
+
+    Endpoints derived from https://steamcommunity.com/dev and the Steamworks
+
+    documentation at https://partner.steamgames.com/doc/webapi.
+
+    '
+  contact:
+    name: Steamworks Developer Portal
+    url: https://partner.steamgames.com/doc/webapi
+servers:
+- url: https://api.steampowered.com
+  description: Public Steam Web API
+- url: https://partner.steam-api.com
+  description: Publisher-only Steam Web API
+security:
+- ApiKey: []
+tags:
+- name: ISteamNews
+paths:
+  /ISteamNews/GetNewsForApp/v2/:
+    get:
+      summary: Get news items for a Steam application
+      parameters:
+      - in: query
+        name: appid
+        required: true
+        schema:
+          type: integer
+      - in: query
+        name: count
+        schema:
+          type: integer
+          default: 20
+      - in: query
+        name: maxlength
+        schema:
+          type: integer
+      - in: query
+        name: enddate
+        schema:
+          type: integer
+      - in: query
+        name: feeds
+        schema:
+          type: string
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - xml
+          - vdf
+          default: json
+      responses:
+        '200':
+          description: News items
+      tags:
+      - ISteamNews
+components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: query
+      name: key
+      description: Steam Web API key. Obtain at https://steamcommunity.com/dev/apikey.
