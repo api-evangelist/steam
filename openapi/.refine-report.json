@@ -1,0 +1,20 @@
+{
+  "provider": "steam",
+  "sources": [
+    "steam-iplayerservice-api-openapi.yml",
+    "steam-isteamnews-api-openapi.yml",
+    "steam-isteamuser-api-openapi.yml",
+    "steam-isteamuserstats-api-openapi.yml"
+  ],
+  "outputs": [
+    "steam-iplayerservice-api-openapi.yml",
+    "steam-isteamnews-api-openapi.yml",
+    "steam-isteamuser-api-openapi.yml",
+    "steam-isteamuserstats-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
