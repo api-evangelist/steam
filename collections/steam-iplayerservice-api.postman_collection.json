@@ -1,0 +1,364 @@
+{
+  "item": [
+    {
+      "id": "73f03eb2-b357-4feb-85a0-8bbcc8d8b03d",
+      "name": "IPlayerService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "09063e2b-434a-4f31-80e4-0169f824dffe",
+          "name": "Get the list of games owned by a Steam user",
+          "request": {
+            "name": "Get the list of games owned by a Steam user",
+            "description": {},
+            "url": {
+              "path": [
+                "IPlayerService",
+                "GetOwnedGames",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "steamid",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "include_appinfo",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_played_free_games",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c0624498-0770-4c64-849d-26e764045aaf",
+              "name": "Owned games",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "IPlayerService",
+                    "GetOwnedGames",
+                    "v1",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "steamid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include_appinfo",
+                      "value": "false"
+                    },
+                    {
+                      "key": "include_played_free_games",
+                      "value": "false"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6084642f-261e-4b54-9c9a-bb1d3fa89b52",
+          "name": "Get recently played games for a Steam user",
+          "request": {
+            "name": "Get recently played games for a Steam user",
+            "description": {},
+            "url": {
+              "path": [
+                "IPlayerService",
+                "GetRecentlyPlayedGames",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "steamid",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "count",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "751d9289-00bf-436c-9cb6-a754d4c40d44",
+              "name": "Recently played games",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "IPlayerService",
+                    "GetRecentlyPlayedGames",
+                    "v1",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "steamid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "count",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9944b662-4719-4749-98dd-e7db4007b310",
+          "name": "Get the Steam level for a Steam user",
+          "request": {
+            "name": "Get the Steam level for a Steam user",
+            "description": {},
+            "url": {
+              "path": [
+                "IPlayerService",
+                "GetSteamLevel",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "steamid",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ed2ffa7e-29ab-4e90-b1ef-5b5dafe44e9e",
+              "name": "Steam level",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "IPlayerService",
+                    "GetSteamLevel",
+                    "v1",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "steamid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.steampowered.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8f17a925-4d85-4f8e-b930-bc3d5dd48944",
+    "name": "Steamworks Web IPlayerService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Valve's Steamworks Web API exposes a constellation of HTTP interfaces for\ngames, players, news, friends, achievements, and items. Public read-only\ninterfaces (with a Steam Web API key) are served from api.steampowered.com;\npublisher-restricted methods are served from partner.steam-api.com.\nEndpoints derived from https://steamcommunity.com/dev and the Steamworks\ndocumentation at https://partner.steamgames.com/doc/webapi.\n\n\nContact Support:\n Name: Steamworks Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

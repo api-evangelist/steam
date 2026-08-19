@@ -1,0 +1,118 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Steamworks Web IPlayerService API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "IPlayerService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the list of games owned by a Steam user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/",
+            "params": [
+              {
+                "name": "steamid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_appinfo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_played_free_games",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "key",
+              "value": "{{key}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Get the list of games owned by a Steam user"
+        },
+        {
+          "info": {
+            "name": "Get recently played games for a Steam user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1/",
+            "params": [
+              {
+                "name": "steamid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "key",
+              "value": "{{key}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Get recently played games for a Steam user"
+        },
+        {
+          "info": {
+            "name": "Get the Steam level for a Steam user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.steampowered.com/IPlayerService/GetSteamLevel/v1/",
+            "params": [
+              {
+                "name": "steamid",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "key",
+              "value": "{{key}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Get the Steam level for a Steam user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

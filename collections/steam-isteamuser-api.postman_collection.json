@@ -1,0 +1,439 @@
+{
+  "item": [
+    {
+      "id": "b8f52547-cc6a-42e5-94e1-fb73f27d1ce5",
+      "name": "ISteamUser",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ff258af5-40f1-433c-a7af-2c8768678bfa",
+          "name": "Get profile summaries for a list of Steam users",
+          "request": {
+            "name": "Get profile summaries for a list of Steam users",
+            "description": {},
+            "url": {
+              "path": [
+                "ISteamUser",
+                "GetPlayerSummaries",
+                "v2",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "steamids",
+                  "value": "<string>",
+                  "description": "(Required) Comma-separated list of 64-bit Steam IDs."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a14f02dc-13fa-476c-aa98-1c77726a4eb5",
+              "name": "Player summaries",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ISteamUser",
+                    "GetPlayerSummaries",
+                    "v2",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "steamids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79e68d29-7539-498d-a6d6-195f20cd9e1a",
+          "name": "Get the friend list for a Steam user",
+          "request": {
+            "name": "Get the friend list for a Steam user",
+            "description": {},
+            "url": {
+              "path": [
+                "ISteamUser",
+                "GetFriendList",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "steamid",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "relationship",
+                  "value": "all"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bff203ef-f680-4171-8726-8740dc9b8b43",
+              "name": "Friend list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ISteamUser",
+                    "GetFriendList",
+                    "v1",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "steamid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "relationship",
+                      "value": "all"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ea206b99-4c3e-4b8b-8a5d-98630b40476a",
+          "name": "Get VAC / community ban information for a list of Steam users",
+          "request": {
+            "name": "Get VAC / community ban information for a list of Steam users",
+            "description": {},
+            "url": {
+              "path": [
+                "ISteamUser",
+                "GetPlayerBans",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "steamids",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e46b4618-9006-4f7c-966c-0a368bb574aa",
+              "name": "Player ban information",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ISteamUser",
+                    "GetPlayerBans",
+                    "v1",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "steamids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f048e741-1018-445b-97a4-f7f288270edb",
+          "name": "Resolve a Steam vanity URL into a 64-bit Steam ID",
+          "request": {
+            "name": "Resolve a Steam vanity URL into a 64-bit Steam ID",
+            "description": {},
+            "url": {
+              "path": [
+                "ISteamUser",
+                "ResolveVanityURL",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "vanityurl",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "url_type",
+                  "value": "1"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e9d970c3-e942-40e6-a4d1-b986dd4b2483",
+              "name": "Resolved Steam ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ISteamUser",
+                    "ResolveVanityURL",
+                    "v1",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "vanityurl",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "url_type",
+                      "value": "1"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.steampowered.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "52ddab99-5f2e-454c-9d05-193d0da833a9",
+    "name": "Steamworks Web IPlayerService ISteamUser API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Valve's Steamworks Web API exposes a constellation of HTTP interfaces for\ngames, players, news, friends, achievements, and items. Public read-only\ninterfaces (with a Steam Web API key) are served from api.steampowered.com;\npublisher-restricted methods are served from partner.steam-api.com.\nEndpoints derived from https://steamcommunity.com/dev and the Steamworks\ndocumentation at https://partner.steamgames.com/doc/webapi.\n\n\nContact Support:\n Name: Steamworks Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Steamworks Web IPlayerService ISteamUser API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ISteamUser",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get profile summaries for a list of Steam users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/",
+            "params": [
+              {
+                "name": "steamids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of 64-bit Steam IDs."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "key",
+              "value": "{{key}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Get profile summaries for a list of Steam users"
+        },
+        {
+          "info": {
+            "name": "Get the friend list for a Steam user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.steampowered.com/ISteamUser/GetFriendList/v1/",
+            "params": [
+              {
+                "name": "steamid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "relationship",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "key",
+              "value": "{{key}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Get the friend list for a Steam user"
+        },
+        {
+          "info": {
+            "name": "Get VAC / community ban information for a list of Steam users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.steampowered.com/ISteamUser/GetPlayerBans/v1/",
+            "params": [
+              {
+                "name": "steamids",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "key",
+              "value": "{{key}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Get VAC / community ban information for a list of Steam users"
+        },
+        {
+          "info": {
+            "name": "Resolve a Steam vanity URL into a 64-bit Steam ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.steampowered.com/ISteamUser/ResolveVanityURL/v1/",
+            "params": [
+              {
+                "name": "vanityurl",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "url_type",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "key",
+              "value": "{{key}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Resolve a Steam vanity URL into a 64-bit Steam ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

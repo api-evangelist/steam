@@ -1,0 +1,171 @@
+{
+  "item": [
+    {
+      "id": "dde1d61d-3722-45bb-bd47-eb08e675322d",
+      "name": "ISteamNews",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4c8879c3-5663-4bbc-b162-f9751e55bdd0",
+          "name": "Get news items for a Steam application",
+          "request": {
+            "name": "Get news items for a Steam application",
+            "description": {},
+            "url": {
+              "path": [
+                "ISteamNews",
+                "GetNewsForApp",
+                "v2",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "appid",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "count",
+                  "value": "20"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxlength",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "enddate",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "feeds",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0ad935e7-f810-466f-ba15-da412b288a3b",
+              "name": "News items",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ISteamNews",
+                    "GetNewsForApp",
+                    "v2",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appid",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "count",
+                      "value": "20"
+                    },
+                    {
+                      "key": "maxlength",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "enddate",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "feeds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.steampowered.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6f1504a3-21be-408e-a022-5a35b0b86d65",
+    "name": "Steamworks Web IPlayerService ISteamNews API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Valve's Steamworks Web API exposes a constellation of HTTP interfaces for\ngames, players, news, friends, achievements, and items. Public read-only\ninterfaces (with a Steam Web API key) are served from api.steampowered.com;\npublisher-restricted methods are served from partner.steam-api.com.\nEndpoints derived from https://steamcommunity.com/dev and the Steamworks\ndocumentation at https://partner.steamgames.com/doc/webapi.\n\n\nContact Support:\n Name: Steamworks Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

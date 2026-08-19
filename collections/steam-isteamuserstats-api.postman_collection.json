@@ -1,0 +1,309 @@
+{
+  "item": [
+    {
+      "id": "945edd15-fe52-4ad4-9790-3c7d142c7b25",
+      "name": "ISteamUserStats",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f49493b7-523c-4c4f-a4a9-e00246d35c00",
+          "name": "Get global achievement percentages for an application",
+          "request": {
+            "name": "Get global achievement percentages for an application",
+            "description": {},
+            "url": {
+              "path": [
+                "ISteamUserStats",
+                "GetGlobalAchievementPercentagesForApp",
+                "v2",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "gameid",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2c02eb92-c425-4f0e-981e-2f7858521d50",
+              "name": "Achievement percentages",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ISteamUserStats",
+                    "GetGlobalAchievementPercentagesForApp",
+                    "v2",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "gameid",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "97a402a8-fef5-45dd-8021-69c04e1b8c32",
+          "name": "Get global stats for a game",
+          "request": {
+            "name": "Get global stats for a game",
+            "description": {},
+            "url": {
+              "path": [
+                "ISteamUserStats",
+                "GetGlobalStatsForGame",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "appid",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "count",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "name[0]",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9e711cdf-d3d8-432a-8b36-9916b041428d",
+              "name": "Global stats",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ISteamUserStats",
+                    "GetGlobalStatsForGame",
+                    "v1",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appid",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "count",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "name[0]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c4e13e5-615b-4560-b333-307d4fc45d23",
+          "name": "Get current concurrent player count for an application",
+          "request": {
+            "name": "Get current concurrent player count for an application",
+            "description": {},
+            "url": {
+              "path": [
+                "ISteamUserStats",
+                "GetNumberOfCurrentPlayers",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "appid",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "933ba584-72eb-4572-a49c-866e25dc57ef",
+              "name": "Player count",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ISteamUserStats",
+                    "GetNumberOfCurrentPlayers",
+                    "v1",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "appid",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.steampowered.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "23110d8f-71d5-4058-8dd2-9547a5cafce4",
+    "name": "Steamworks Web IPlayerService ISteamUserStats API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Valve's Steamworks Web API exposes a constellation of HTTP interfaces for\ngames, players, news, friends, achievements, and items. Public read-only\ninterfaces (with a Steam Web API key) are served from api.steampowered.com;\npublisher-restricted methods are served from partner.steam-api.com.\nEndpoints derived from https://steamcommunity.com/dev and the Steamworks\ndocumentation at https://partner.steamgames.com/doc/webapi.\n\n\nContact Support:\n Name: Steamworks Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

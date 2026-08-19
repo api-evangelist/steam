@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Steamworks Web IPlayerService ISteamNews API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ISteamNews",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get news items for a Steam application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/",
+            "params": [
+              {
+                "name": "appid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxlength",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "enddate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "feeds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get news items for a Steam application"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
