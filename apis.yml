@@ -59,6 +59,11 @@ apis:
 - aid: steam:steam-user-api
   name: ISteamUser
   tags:
+  - User
+  - Profiles
+  - Friends
+  - Bans
+  tags_raw:
   - Users
   - Profiles
   - Friends
@@ -84,6 +89,10 @@ apis:
 - aid: steam:steam-apps-api
   name: ISteamApps
   tags:
+  - Application
+  - Catalog
+  - Servers
+  tags_raw:
   - Apps
   - Catalog
   - Servers
@@ -120,6 +129,10 @@ apis:
   name: IGameInventory
   tags:
   - Inventory
+  - Item
+  - Economy
+  tags_raw:
+  - Inventory
   - Items
   - Economy
   properties:
@@ -131,6 +144,10 @@ apis:
 - aid: steam:steam-inventory-service-api
   name: IInventoryService
   tags:
+  - Inventory
+  - Item
+  - Service
+  tags_raw:
   - Inventory
   - Items
   - Service
@@ -190,6 +207,9 @@ apis:
 - aid: steam:steam-game-notifications-api
   name: IGameNotificationsService
   tags:
+  - Notification
+  - In-Game
+  tags_raw:
   - Notifications
   - In-Game
   properties:
