@@ -47,6 +47,10 @@ apis:
   name: ISteamNews
   tags:
   - News
+  - Feed
+  - Public
+  tags_raw:
+  - News
   - Feeds
   - Public
   properties:
@@ -131,6 +135,10 @@ apis:
   name: ISteamEconomy
   tags:
   - Economy
+  - Trade
+  - Asset Class
+  tags_raw:
+  - Economy
   - Trades
   - Asset Class
   properties:
@@ -160,7 +168,7 @@ apis:
   tags:
   - Inventory
   - Item
-  - Service
+  - Services
   tags_raw:
   - Inventory
   - Items
@@ -208,6 +216,11 @@ apis:
 - aid: steam:steam-player-service-api
   name: IPlayerService
   tags:
+  - Player
+  - Owned Games
+  - Recently Played
+  - Badges
+  tags_raw:
   - Players
   - Owned Games
   - Recently Played
@@ -247,6 +260,10 @@ apis:
 - aid: steam:steam-publishedfile-api
   name: IPublishedFileService
   tags:
+  - Workshops
+  - UGC
+  - Published Files
+  tags_raw:
   - Workshop
   - UGC
   - Published Files
