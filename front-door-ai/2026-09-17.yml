@@ -1,0 +1,27 @@
+# Front Door AI Index — steam — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: steam
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: store.steampowered.com
+  final_host: store.steampowered.com
+  ownership: own
+  owner: steam
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 1
+  host_score: 1
+  density: 0.36
+  words: 2787
+  tiers:
+    agentic: 0
+    core: 1
+    model: 0
+  ambiguous: 3
+  top_terms:
+    automation: 2
+    artificial intelligence: 1
+    intelligence: 1

@@ -1,10 +1,7 @@
 {
   "provider": "steam",
   "sources": [
-    "steam-iplayerservice-api-openapi.yml",
-    "steam-isteamnews-api-openapi.yml",
-    "steam-isteamuser-api-openapi.yml",
-    "steam-isteamuserstats-api-openapi.yml"
+    "_original/steam-openapi.yml"
   ],
   "outputs": [
     "steam-iplayerservice-api-openapi.yml",
@@ -15,6 +12,30 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "steam-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "steam-openapi.yml: tagged paths GET /ISteamNews/GetNewsForApp/v2/ -> ISteamNews",
+    "steam-openapi.yml: tagged paths GET /ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/ -> ISteamUserStats",
+    "steam-openapi.yml: tagged paths GET /ISteamUserStats/GetGlobalStatsForGame/v1/ -> ISteamUserStats",
+    "steam-openapi.yml: tagged paths GET /ISteamUserStats/GetNumberOfCurrentPlayers/v1/ -> ISteamUserStats",
+    "steam-openapi.yml: tagged paths GET /ISteamUser/GetPlayerSummaries/v2/ -> ISteamUser",
+    "steam-openapi.yml: tagged paths GET /ISteamUser/GetFriendList/v1/ -> ISteamUser",
+    "steam-openapi.yml: tagged paths GET /ISteamUser/GetPlayerBans/v1/ -> ISteamUser",
+    "steam-openapi.yml: tagged paths GET /ISteamUser/ResolveVanityURL/v1/ -> ISteamUser",
+    "steam-openapi.yml: tagged paths GET /IPlayerService/GetOwnedGames/v1/ -> IPlayerService",
+    "steam-openapi.yml: tagged paths GET /IPlayerService/GetRecentlyPlayedGames/v1/ -> IPlayerService",
+    "steam-openapi.yml: tagged paths GET /IPlayerService/GetSteamLevel/v1/ -> IPlayerService",
+    "steam-openapi.yml: declared missing tag: IPlayerService",
+    "steam-openapi.yml: declared missing tag: ISteamNews",
+    "steam-openapi.yml: declared missing tag: ISteamUser",
+    "steam-openapi.yml: declared missing tag: ISteamUserStats",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "steam-iplayerservice-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "steam-isteamnews-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "steam-isteamuser-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "steam-isteamuserstats-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

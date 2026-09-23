@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Steamworks Web IPlayerService ISteamUser API
+  title: Steamworks Web I Steam User API
   version: 1.0.0
   description: 'Valve''s Steamworks Web API exposes a constellation of HTTP interfaces for
 
@@ -12,9 +12,7 @@ info:
 
     Endpoints derived from https://steamcommunity.com/dev and the Steamworks
 
-    documentation at https://partner.steamgames.com/doc/webapi.
-
-    '
+    documentation at https://partner.steamgames.com/doc/webapi.'
   contact:
     name: Steamworks Developer Portal
     url: https://partner.steamgames.com/doc/webapi
@@ -45,6 +43,8 @@ paths:
           description: Player summaries
       tags:
       - ISteamUser
+      operationId: getISteamUserGetPlayerSummariesV2
+      x-operation-id-source: derived
   /ISteamUser/GetFriendList/v1/:
     get:
       summary: Get the friend list for a Steam user
@@ -69,6 +69,8 @@ paths:
           description: Friend list
       tags:
       - ISteamUser
+      operationId: getISteamUserGetFriendListV1
+      x-operation-id-source: derived
   /ISteamUser/GetPlayerBans/v1/:
     get:
       summary: Get VAC / community ban information for a list of Steam users
@@ -85,6 +87,8 @@ paths:
           description: Player ban information
       tags:
       - ISteamUser
+      operationId: getISteamUserGetPlayerBansV1
+      x-operation-id-source: derived
   /ISteamUser/ResolveVanityURL/v1/:
     get:
       summary: Resolve a Steam vanity URL into a 64-bit Steam ID
@@ -110,6 +114,8 @@ paths:
           description: Resolved Steam ID
       tags:
       - ISteamUser
+      operationId: getISteamUserResolveVanityURLV1
+      x-operation-id-source: derived
 components:
   securitySchemes:
     ApiKey:
