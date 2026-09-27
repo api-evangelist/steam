@@ -97,6 +97,10 @@ apis:
   tags:
   - Authentication
   - Sessions
+  - Ticketing
+  tags_raw:
+  - Authentication
+  - Sessions
   - Tickets
   properties:
   - url: https://partner.steamgames.com/doc/webapi/ISteamUserAuth
