@@ -115,3 +115,36 @@ plans:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - revenue-share
+  - subscription
+  units:
+  - object
+  plans:
+  - name: Public Steam Web API
+    access: free
+    model: subscription
+    model_how: derived
+    units:
+    - object
+    periods:
+    - one-time
+  - name: Steam Direct (Game Publisher)
+    access: paid
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Steam Distribution Revenue Share
+    access: partner
+    model: revenue-share
+    model_how: stated
+    units:
+    - other
+    periods:
+    - one-time
